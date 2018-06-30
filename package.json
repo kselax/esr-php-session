@@ -1,0 +1,40 @@
+{
+  "name": "esr-php-session",
+  "version": "1.0.1",
+  "description": "esr-php-session is a session for express, socket.io, php which doesn't suck to work together with Redis as a database.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "express session",
+    "php session",
+    "socket.io session",
+    "socket.io",
+    "php session"
+  ],
+  "author": {
+    "name": "Hacker Kselax",
+    "email": "neovichnn@gmail.com",
+    "url": "http://kselax.ru/en"
+  },
+  "bugs": {
+    "url": "https://github.com/kselax/esr-php-session/issues"
+  },
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kselax/esr-php-session"
+  },
+  "license": "GPL-3.0-or-later",
+  "devDependencies": {
+    "debug": "^3.1.0"
+  },
+  "dependencies": {
+    "express": "^4.16.3",
+    "redis": "^2.8.0",
+    "socket.io": "^2.1.1"
+  }
+}

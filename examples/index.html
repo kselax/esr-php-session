@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div class="message">
+  Views = <span id="views"></span>
+  </div>
+  <button id="plus">plus</button>&nbsp;
+  <button id="zero">zero</button>
+
+  <script src="/socket.io.js" charset="utf-8"></script>
+  <script src="/jquery.js" charset="utf-8"></script>
+  <script>
+    var io = io();
+    $('#plus').click(function(event) {
+      io.emit('plus', 'plus');
+    });
+    $('#zero').click(function(event) {
+      io.emit('zero', 'zero');
+    });
+    io.on('message', function(msg){
+      console.log(msg)
+      $('#views').text(msg);
+    })
+  </script>
+</body>
+</html>
