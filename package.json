@@ -1,6 +1,6 @@
 {
   "name": "esr-php-session",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "esr-php-session is a session for express, socket.io, php which doesn't suck to work together with Redis as a database.",
   "main": "index.js",
   "scripts": {
