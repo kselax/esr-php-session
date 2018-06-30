@@ -3,11 +3,11 @@ esr-php-session
 
 A [esr-php-session][] is a session for `express`, `socket.io`, `php`, which doesn't suck to work together with `Redis` as a database.
 
-Authors: Neo he is notoriously known in runet as Hacker Kselax Here is his [home page] to visit
+Authors: Neo he is very well known in runet as Hacker Kselax Here is his [home page] to visit
 
 [![npm version][npm-badge]][npm]
 [![dependency status][dep-badge]][dep-status]
-
+[esr-php-session]: https://www.npmjs.com/package/esr-php-session
 [npm]: https://www.npmjs.org/package/esr-php-session
 [npm-badge]: https://img.shields.io/npm/v/esr-php-session.svg?style=flat-square
 [dep-status]: https://david-dm.org/ericf/esr-php-session
@@ -17,19 +17,19 @@ Authors: Neo he is notoriously known in runet as Hacker Kselax Here is his [home
 ## Goals & Design
 I built this package out of frustrations of existing packages `express-session`, `connect-redis`, `express-socket.io-session`. This three doesn't work properly together with redis database. and We can't find the package that allows working with php.
 
-So this simple package was designed to work with sessions using Redis as database three express + socket.io + php. You can use them all together or for each separately
+So this simple package was designed to work with sessions using Redis as database and three of express + socket.io + php. You can use them all together or for each separately
 
 ## Installation
 ```shell
 $ npm install esr-php-session --save
 ```
 ## Before usage important to know
-**for session works properly with php+socket.io+express you have to specify the same name in any initialization this option `esr_php_session_name: 'my_session',` should be equal otherwise they can't work simultaneously and to know each other**
+**For session works properly with php+socket.io+express you have to specify the same name in any initialization. This option `esr_php_session_name: 'my_session',` should be equal otherwise they can't work simultaneously and to know each other**
 
 ## Usage with express and socket.io
 Include to file
 ```javascript
-var esr_php_session = require('./esr-php-session/esr-php-session');
+var esr_php_session = require('esr-php-session');
 ```
 in middlewire add this lines
 
@@ -58,11 +58,11 @@ now for you available `socket.esr_php_session` and you can put there some variab
 
 
 ## Usage with php
-at first find file `Esr_php_session.php` and include it to your php project
+at first find file  `/node_modules/esr-php-session/Esr_php_session.php` and include it to your php project
 ```php
 require_once 'Esr_php_session.php';
 ```
-then create a object
+then create an object
 ```php
 $obj = new Esr_php_session(array(
   'esr_php_session_name' => 'my_session',
@@ -71,7 +71,7 @@ $obj = new Esr_php_session(array(
   'EX' => 60,
 ));
 ```
-that's it, when you create object in this time will be automatically added to `$_COOKIE` a new variable with name of your session `$_COOKIE[esr_php_session_name]`
+that's it, when you create an object in this time will be automatically added to `$_COOKIE` a new element with name of your session `$_COOKIE[esr_php_session_name]`
 
 ## Example with express
 ```javascript
