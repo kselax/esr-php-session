@@ -39,7 +39,7 @@ app.use(esr_php_session.express_session({
   esr_php_session_name: 'my_session',
   secret: 'my new secret',
   maxAge: (60 * 60 * 24), // by default 24 hours
-  EX: 60,
+  ex: 60,
 }));
 ```
 then you can put variables to `res.esr_php_session`
@@ -51,7 +51,7 @@ io.use(esr_php_session.socket_io_session({
   esr_php_session_name: 'my_session',
   secret: 'my new secret',
   maxAge: (60 * 60 * 24), // by default 24 hours
-  EX: 60,
+  ex: 60,
 }));
 ```
 now for you available `socket.esr_php_session` and you can put there some variable like `socket.esr_php_session.views = 30`
@@ -68,7 +68,7 @@ $obj = new Esr_php_session(array(
   'esr_php_session_name' => 'my_session',
   'secret' => 'my new secret',
   'maxAge' => (60 * 60 * 24), // by default 24 hours
-  'EX' => 60,
+  'ex' => 60,
 ));
 ```
 that's it, when you create an object in this time will be automatically added to `$_COOKIE` a new element with name of your session `$_COOKIE[esr_php_session_name]`
@@ -84,7 +84,7 @@ app.use(esr_php_session.express_session({
   esr_php_session_name: 'my_session',
   secret: 'my new secret',
   maxAge: (60 * 60 * 24), // by default 24 hours
-  EX: 60,
+  ex: 60,
 }));
 
 app.get('/', function(req, res){
@@ -105,7 +105,7 @@ io.use(esr_php_session.socket_io_session({
   esr_php_session_name: 'my_session',
   secret: 'my new secret',
   maxAge: (60 * 60 * 24), // by default 24 hours
-  EX: 60,
+  ex: 60,
 }));
 
 io.on('connection', function(socket){

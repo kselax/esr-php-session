@@ -16,7 +16,7 @@ app.use(esr_php_session.express_session({
   esr_php_session_name: 'my_session',
   secret: 'my new secret',
   maxAge: (60 * 60 * 24), // by default 24 hours
-  EX: 60,
+  ex: 60,
 }));
 
 app.get('/', function(req, res){
@@ -36,7 +36,7 @@ io.use(esr_php_session.socket_io_session({
   esr_php_session_name: 'my_session',
   secret: 'my new secret',
   maxAge: (60 * 60 * 24), // by default 24 hours
-  EX: 60,
+  ex: 60,
 }));
 
 io.on('connection', function(socket){
